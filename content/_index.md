@@ -1,5 +1,5 @@
 +++
-title = 'Hugo Getting Started Guide'
+title = 'Hugo Getting Started Guide Bruh'
 +++
 
 Welcome to this hands-on guide for setting up a modern [Hugo](https://gohugo.io) website. Hugo is one of the fastest static site generators, written in Go.
