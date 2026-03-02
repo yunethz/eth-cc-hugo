@@ -1,0 +1,89 @@
+// Override Ananke theme defaults
+
+$accent: #1a73e8;
+$accent-hover: #1558b0;
+$radius: 4px;
+
+// Tighten up body text
+.nested-copy-line-height {
+  p, li {
+    line-height: 1.7;
+  }
+}
+
+// Code blocks
+pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-radius: $radius;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+// Inline code
+p code, li code {
+  background: #f0f0f0;
+  padding: 0.15em 0.4em;
+  border-radius: $radius;
+  font-size: 0.85em;
+}
+
+// Guide navigation shortcode
+.guide-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+
+  &__link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: $radius;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &--next {
+      text-align: right;
+    }
+
+    &:not(.guide-nav__link--disabled) {
+      color: $accent;
+
+      &:hover {
+        border-color: $accent;
+        background: rgba($accent, 0.04);
+      }
+    }
+
+    &--disabled {
+      visibility: hidden;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.2rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+}

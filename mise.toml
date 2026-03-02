@@ -1,0 +1,4 @@
+[tools]
+"aqua:gohugoio/hugo/hugo-extended" = "0.157.0"
+"aqua:sass/dart-sass" = "1.97.3"
+go = "1.26.0"

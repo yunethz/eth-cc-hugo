@@ -1,0 +1,34 @@
+{{- $pages := .Page.Parent.Pages.ByWeight -}}
+{{- $current := .Page -}}
+{{- $prev := false -}}
+{{- $next := false -}}
+{{- $found := false -}}
+{{- range $pages -}}
+  {{- if $found -}}
+    {{- if not $next -}}
+      {{- $next = . -}}
+    {{- end -}}
+  {{- else if eq . $current -}}
+    {{- $found = true -}}
+  {{- else -}}
+    {{- $prev = . -}}
+  {{- end -}}
+{{- end -}}
+<nav class="guide-nav">
+  {{- with $prev }}
+  <a class="guide-nav__link guide-nav__link--prev" href="{{ .RelPermalink }}">
+    <span class="guide-nav__label">&larr; Previous</span>
+    <span class="guide-nav__title">{{ .Title }}</span>
+  </a>
+  {{- else }}
+  <span class="guide-nav__link guide-nav__link--prev guide-nav__link--disabled"></span>
+  {{- end }}
+  {{- with $next }}
+  <a class="guide-nav__link guide-nav__link--next" href="{{ .RelPermalink }}">
+    <span class="guide-nav__label">Next &rarr;</span>
+    <span class="guide-nav__title">{{ .Title }}</span>
+  </a>
+  {{- else }}
+  <span class="guide-nav__link guide-nav__link--next guide-nav__link--disabled"></span>
+  {{- end }}
+</nav>

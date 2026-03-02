@@ -1,0 +1,3 @@
+{{ with resources.Get "scss/custom.scss" | css.Sass (dict "transpiler" "dartsass") }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
